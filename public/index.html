@@ -4,11 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nanum+Myeongjo&display=swap" rel="stylesheet"> 
     <title>Document</title>
 </head>
 
-<body>
-    <div id="root"></div>   
+<body style="margin:0; box-sizing: border-box;font-family: 'Montserrat', sans-serif;">
+    <div id="root"></div>
+    <div style="text-align: center; font-size: 2.8rem; margin: 2rem ;">Example of Mimic!</div>
+    <div style="text-align: center; font-size: 1.8rem; margin: 0rem 2rem; padding-bottom: 2rem;"><u>QR code Generator</u>
+    </div>
+
+    <div style="width: 90%;margin: 0 auto; height: 80vh; display: flex; justify-content: space-around; align-items: center; background-color: rgb(245, 248, 251); border-radius: 4rem;">
+        <div class="left" style="">
+            <input  placeholder="Enter your link/text here" style="font-size:4rem; padding: 1rem; width:80%; border: 0; border-bottom: 1px solid black; margin-left:2rem" onchange="temp(event)" type="url"> 
+        </div> 
+        <div class="right" style="width: 60%;height: 80vh; background-color: #9aa4ff; border-radius: 4rem; position: relative;">
+            <img style="margin: 0 auto; height: 18rem; position: absolute; top:20%; left: 20%;" class="imageClass" src="http://api.qrserver.com/v1/create-qr-code/?data=HelloWorld!&size=100x100" alt="">
+        </div>
+    </div><br><br>
+
+    <script>
+        function temp(event){
+            const data="http://api.qrserver.com/v1/create-qr-code/?data="+event.target.value+"&size=100x100"
+            const val=document.querySelector(".imageClass");
+            console.log(val);
+            val.src=data;
+            val.setAttribute("src",data);
+        }
+    </script>
     <script src="../src/index.js"></script> 
 </body>
 
