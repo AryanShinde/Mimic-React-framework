@@ -20,3 +20,6 @@ It works on concurrent mode which helps in rendering our tree without blocking t
 
 ## Up Plans 📝:
 * Hooks
+
+## Architecture
+<img width="804" alt="image" src="https://user-images.githubusercontent.com/73652194/201530967-5685451d-b8d9-4a15-93b3-f6b546faa3a0.png">
